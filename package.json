@@ -1,0 +1,30 @@
+{
+  "name": "developer-dojo",
+  "version": "1.0.0",
+  "description": "Custom plugin solely for developer-dojo PH meetup",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phpbits/developer-dojo.git"
+  },
+  "author": "phpbits",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phpbits/developer-dojo/issues"
+  },
+  "homepage": "https://github.com/phpbits/developer-dojo#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^6.1.1",
+    "css-loader": "^3.4.1",
+    "ignore-emit-webpack-plugin": "^2.0.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.0",
+    "path": "^0.12.7",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "sass-loader": "^8.0.0"
+  }
+}
