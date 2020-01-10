@@ -141,12 +141,12 @@ registerBlockType(name, {
   description: description,
   keywords: keywords,
   supports: {
-    align: ["wide", "full"],
+    align: ['wide', 'full'],
     anchor: true,
     html: false
   },
   category: category,
-  icon: "editor-kitchensink",
+  icon: 'editor-kitchensink',
   attributes: attributes,
   edit: function edit(props) {
     var className = props.className;
