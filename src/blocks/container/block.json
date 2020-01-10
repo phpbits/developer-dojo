@@ -1,0 +1,9 @@
+{
+	"name": "phpbits/developer-dojo",
+	"category": "common",
+	"attributes": {
+		"content": {
+			"type": "string"
+		}
+	}
+}
