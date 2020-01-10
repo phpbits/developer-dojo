@@ -20,7 +20,7 @@ function developer_dojo_block_editor_assets(){
     wp_enqueue_script(
         'developer-dojo-block-js', // Handle.
         $url . '/build/index.js',
-        array( 'wp-blocks', 'wp-i18n', 'wp-element' )
+        array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' )
     );
     // Styles.
     wp_enqueue_style(
