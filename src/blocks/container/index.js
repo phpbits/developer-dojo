@@ -14,15 +14,15 @@ import metadata from './block.json';
  * Block constants
  */
 const { name, category, attributes } = metadata;
-const title = __('Custom Container', 'developer-dojo');
-const description = __('Provide custom container', 'developer-dojo');
+const title = __( 'Custom Container', 'developer-dojo' );
+const description = __( 'Provide custom container', 'developer-dojo' );
 const keywords = [
-	__('container', 'developer-dojo'),
-	__('wrapper', 'developer-dojo'),
-	__('section', 'developer-dojo'),
+	__( 'container', 'developer-dojo' ),
+	__( 'wrapper', 'developer-dojo' ),
+	__( 'section', 'developer-dojo' ),
 ];
 
-registerBlockType(name, {
+registerBlockType( name, {
 	title,
 
 	description,
@@ -30,7 +30,7 @@ registerBlockType(name, {
 	keywords,
 
 	supports: {
-		align: ['wide', 'full'],
+		align: [ 'wide', 'full' ],
 		anchor: true,
 		html: false,
 	},
@@ -41,11 +41,23 @@ registerBlockType(name, {
 
 	attributes,
 
-	edit: () => {
-		return null;
+	edit: ( props ) => {
+		const { className } = props;
+
+		return (
+			<div className={ className }>
+				<InnerBlocks renderAppender={ InnerBlocks.ButtonBlockAppender } />
+			</div>
+		);
 	},
 
-	save: () => {
-		return null;
+	save: ( props ) => {
+		const { className } = props;
+
+		return (
+			<div className={ className }>
+				<InnerBlocks.Content />
+			</div>
+		);
 	},
-});
+} );

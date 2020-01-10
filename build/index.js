@@ -106,8 +106,12 @@ module.exports = JSON.parse("{\"name\":\"phpbits/developer-dojo\",\"category\":\
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./block.json */ "./src/blocks/container/block.json");
-var _block_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./block.json */ "./src/blocks/container/block.json", 1);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block.json */ "./src/blocks/container/block.json");
+var _block_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./block.json */ "./src/blocks/container/block.json", 1);
+
+
 /**
  * WordPress dependencies
  */
@@ -123,9 +127,9 @@ var InnerBlocks = wp.blockEditor.InnerBlocks;
  * Block constants
  */
 
-var name = _block_json__WEBPACK_IMPORTED_MODULE_0__.name,
-    category = _block_json__WEBPACK_IMPORTED_MODULE_0__.category,
-    attributes = _block_json__WEBPACK_IMPORTED_MODULE_0__.attributes;
+var name = _block_json__WEBPACK_IMPORTED_MODULE_1__.name,
+    category = _block_json__WEBPACK_IMPORTED_MODULE_1__.category,
+    attributes = _block_json__WEBPACK_IMPORTED_MODULE_1__.attributes;
 
 var title = __('Custom Container', 'developer-dojo');
 
@@ -137,18 +141,26 @@ registerBlockType(name, {
   description: description,
   keywords: keywords,
   supports: {
-    align: ['wide', 'full'],
+    align: ["wide", "full"],
     anchor: true,
     html: false
   },
   category: category,
-  icon: 'editor-kitchensink',
+  icon: "editor-kitchensink",
   attributes: attributes,
-  edit: function edit() {
-    return null;
+  edit: function edit(props) {
+    var className = props.className;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: className
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InnerBlocks, {
+      renderAppender: InnerBlocks.ButtonBlockAppender
+    }));
   },
-  save: function save() {
-    return null;
+  save: function save(props) {
+    var className = props.className;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: className
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InnerBlocks.Content, null));
   }
 });
 
@@ -168,6 +180,17 @@ __webpack_require__.r(__webpack_exports__);
  * Internal dependencies
  */
 
+
+/***/ }),
+
+/***/ "@wordpress/element":
+/*!******************************************!*\
+  !*** external {"this":["wp","element"]} ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["element"]; }());
 
 /***/ })
 
